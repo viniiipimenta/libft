@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:54:08 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/05/16 11:56:34 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:16:48 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,24 @@ char *ft_strrchr(const char *s, int c)
 	size_t	i;
 	size_t	n;
 	char 	j;
-	char	str;
+	char	*str;
 
 	n = 0;
 	j = (char)c;
-	i = ft_strlen(*s);
+	i = ft_strlen(s);
+	str = (char *)s;
 	while (i != 0)
 	{
-		if(s[i] == j)
+		if (s[i] == j)
 		{
-			while(s[i] != '\0')
+			while (s[i] != '\0')
 			{
 				str[n] = s[i];
 				i++;
-				n++
+				n++;
 			}
-			return(str);
+			str[n] = '\0';
+			return (str);
 		}
 		i--;
 	}
