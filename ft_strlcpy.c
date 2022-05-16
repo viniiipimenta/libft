@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:43:54 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/05/16 10:02:03 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:22:54 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
-
-	i = dstsize - 1;
-	while (i-- > 0)
-	{
-		dst[i] = src[i];
-	}
+	while (--dstsize)
+		dst[dstsize] = src[dstsize];
 	return (ft_strlen(src));
 }
