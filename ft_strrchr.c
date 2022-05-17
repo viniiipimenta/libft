@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:54:08 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/05/16 14:16:48 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/05/17 14:37:19 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char *ft_strrchr(const char *s, int c)
 	{
 		if (s[i] == j)
 		{
-			while (s[i] != '\0')
+			while (s[i] != '\0' && j != '\0')
 			{
 				str[n] = s[i];
 				i++;
