@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 08:21:15 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/05/16 10:29:36 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/05/17 14:37:46 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ int	main(void)
 	printf("bzero: %s\n", test);
 	printf("memcpy: %s\n", ft_memcpy(test, test2, 5));
 	printf("memmove: %s\n", ft_memmove(test2, test, 5));
+	printf("memmove original: %s\n", memmove(test2, test, 5));
 	printf("strlcpy: %zu\n", ft_strlcpy(test, test2, 5));
-	printf("strlcat %zu\n", strlcat(test, test2, 50));
+	printf("strlcat %zu\n", ft_strlcat(test, test2, 50));
 	printf("to upper: %c\n", ft_toupper('a'));
 	printf("to lower: %c\n", ft_tolower('A'));
 	printf("strchr: %s\n", ft_strchr(test3, 'a'));

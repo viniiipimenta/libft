@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:07:17 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/05/16 14:24:19 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/05/18 08:30:32 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	source = (char *)src;
 	dest = (char *)dst;
 	i = 0;
+	if (!dst && !src)
+		return (0);
 	if (dest > source)
 	{
 		while (len--)

@@ -6,18 +6,13 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 08:54:11 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/05/10 10:48:10 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/05/18 08:08:33 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	unsigned char	r;
-
-	r = (unsigned char)c;
-	if (r >= 65 && r <= 90)
-	{
-		r = r + 32;
-	}
-	return (r);
+	if (c >= 65 && c <= 90)
+		c = c + 32;
+	return (c);
 }

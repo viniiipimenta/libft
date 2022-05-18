@@ -6,18 +6,13 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 08:40:44 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/05/10 10:48:35 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/05/18 08:07:32 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	unsigned char	r;
-
-	r = (unsigned char) c;
-	if (r >= 97 && r <= 122)
-	{
-		r = r - 32;
-	}
-	return (r);
+	if (c >= 97 && c <= 122)
+		c = c - 32;
+	return (c);
 }
