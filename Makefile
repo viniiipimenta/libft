@@ -13,6 +13,10 @@ CFLAGS = -Wall -Wextra -Werror
 .c.o:
 		${CC} ${CFLAGS} -g -c $< -o ${<:.c=.o}
 
+so:
+		$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+			gcc -nostartfiles -shared -o libft.so $(OBJS)
+
 $(NAME): ${OBJS}
 		ar rcs ${NAME} ${OBJS}
 		ranlib ${NAME}
