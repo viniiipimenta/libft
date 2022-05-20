@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:43:54 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/05/18 09:16:55 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:07:47 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	while (dstsize--)
-		dst[dstsize] = src[dstsize];
+	if (ft_strlen(src) + 1 < dstsize)
+		ft_memcpy(dst, src, ft_strlen(src) + 1);
+	else if (dstsize > 0)
+		ft_memcpy(dst, src, dstsize - 1);
+	dst[dstsize - 1] = '\0';
 	return (ft_strlen(src));
 }
