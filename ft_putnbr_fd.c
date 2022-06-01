@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 11:32:28 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/06/01 12:50:04 by mpimenta         ###   ########.fr       */
+/*   Created: 2022/06/01 13:36:08 by mpimenta          #+#    #+#             */
+/*   Updated: 2022/06/01 14:28:42 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	char	*s2;
-	int		set2;
+	unsigned int	nbr;
 
-	set2 = (int) set;
-	if (!s1)
-		return (0);
-	s2 = malloc(sizeof(char) * ft_strlen(s1));
-	if (!s2)
-		return (0);
-	if (s1[0] == *set && s1[ft_strlen(s1)] == *set)
+	if (nb < 0)
 	{
-		s2 = ft_strchr(s1, set2);
-		s2[ft_strlen(s2) + 1] = '\0';
+		ft_putchar_fd('-', fd);
+		nbr = nb * -1;
 	}
-	return (s2);
+	else
+	{
+		nbr = nb;
+	}
+	if (nbr >= 10)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+	}
+	ft_putchar_fd(nbr % 10 + '0', fd);
 }
