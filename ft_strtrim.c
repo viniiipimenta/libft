@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:32:28 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/06/01 12:50:04 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/06/03 09:37:55 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (s2);
 }
-
