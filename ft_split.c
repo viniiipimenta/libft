@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 19:27:00 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/06/06 20:49:22 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/06/07 09:49:02 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,30 +43,26 @@ static int	word_count(char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	char	*s2;
-	int	count_words;
-	int	i;
-	int	j;
+	int		count_words;
+	int		i;
+	int		j;
 
 	i = 0;
-	if (!s)
-		return (0);
-	s2 = (char *) s;
-	count_words = word_count(s2, c);
+	count_words = word_count((char *)s, c);
 	split = malloc(sizeof(*split) * (count_words + 1));
 	if (!split)
 		return (0);
 	while (i < count_words)
 	{
-		while (*s2 == c && *s2 != '\0')
-			s2++;
+		while (*(char *)s == c && *(char *)s != '\0')
+			s++;
 		j = 0;
-		while (s2[j] != c && s2[j] != '\0')
+		while (s[j] != c && s[j] != '\0')
 			j++;
-		split [i] = ft_substr(s2, 0, j);
+		split [i] = ft_substr(s, 0, j);
 		if (!split[i++])
 			emptying(split, i);
-		s2 = s2 + j;
+		s = s + j;
 	}
 	split[count_words] = NULL;
 	return (split);
