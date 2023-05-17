@@ -1,5 +1,5 @@
 <h1 align="center">libft</h1>
-<p>📖 Useful functions in C language.</p>
+<p>Useful functions in C language.</p>
 
 ## Usage
 
